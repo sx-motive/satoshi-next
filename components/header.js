@@ -35,7 +35,7 @@ export default function Header() {
         </nav>
         <div className="wrap-btns">
           <Link href="/">
-            <a>Let's work together</a>
+            <a>Lets work together</a>
           </Link>
         </div>
       </header>
