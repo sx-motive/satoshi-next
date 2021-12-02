@@ -28,7 +28,7 @@ export default function Services() {
             <div key={index} className="box">
               <div className="container -default">
                 <div className="img-wrap">
-                  <Image src={item.img} quality={100} layout="fill" />
+                  <Image src={item.img} quality={100} layout="fill" alt="img" />
                 </div>
                 <h3>{item.title}</h3>
                 <span>{item.description}</span>
