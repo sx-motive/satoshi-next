@@ -6,7 +6,11 @@ import { nav } from "../pages/api/data";
 export default function Header() {
   return (
     <>
-      <div className="header-notification">
+      <div
+        data-scroll-section
+        data-scroll-section-inview
+        className="header-notification"
+      >
         <span>
           <marquee>
             Buy more, save more during our holiday special. Offer ends in 00
@@ -14,7 +18,7 @@ export default function Header() {
           </marquee>
         </span>
       </div>
-      <header>
+      <header data-scroll-section data-scroll-section-inview>
         <div className="wrap-logo">
           <Link href="/">
             <a className="logo">Satoshi</a>
@@ -34,7 +38,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="wrap-btns">
-          <Link href="/">
+          <Link href="/constacts">
             <a>Lets work together</a>
           </Link>
         </div>

@@ -5,8 +5,6 @@ import Headpage from "../components/headpage";
 
 import { services } from "./api/data";
 
-console.log(services);
-
 export default function Services() {
   return (
     <>
@@ -16,27 +14,36 @@ export default function Services() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Headpage title="Services" description=" " />
+      <Headpage
+        title="Services"
+        description="As coworking spaces, we are not just space providers: we enhance the working spaces by being the best companion. Silversquare is a binding agent between people, skills, and knowledge."
+      />
 
-        <section className="image -full">
-          <MotiveImage src="/media/02.jpg" />
-        </section>
+      <section
+        data-scroll-section
+        data-scroll-section-inview
+        className="image -full"
+      >
+        <MotiveImage src="/media/03.jpeg" />
+      </section>
 
-        <section className="services-blocks">
-          {services.map((item, index) => (
-            <div key={index} className="box">
-              <div className="container -default">
-                <div className="img-wrap">
-                  <Image src={item.img} quality={100} layout="fill" alt="img" />
-                </div>
-                <h3>{item.title}</h3>
-                <span>{item.description}</span>
+      <section
+        data-scroll-section
+        data-scroll-section-inview
+        className="services-blocks"
+      >
+        {services.map((item, index) => (
+          <div key={index} className="box">
+            <div className="container -default">
+              <div className="img-wrap">
+                <Image src={item.img} quality={100} layout="fill" alt="img" />
               </div>
+              <h3>{item.title}</h3>
+              <span>{item.description}</span>
             </div>
-          ))}
-        </section>
-      </main>
+          </div>
+        ))}
+      </section>
     </>
   );
 }

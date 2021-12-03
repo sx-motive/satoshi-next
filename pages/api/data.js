@@ -1,7 +1,7 @@
 export const nav = [
   { title: "About", link: "/" },
   { title: "Services", link: "/services" },
-  { title: "FAQs", link: "/questions" },
+  { title: "FAQs", link: "/faqs" },
   { title: "Shop", link: "/shop" },
 ];
 

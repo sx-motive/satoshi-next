@@ -3,7 +3,11 @@ import Link from "next/link";
 export default function Headpage(props) {
   return (
     <>
-      <section className="head-page">
+      <section
+        data-scroll-section
+        data-scroll-section-inview
+        className="head-page"
+      >
         <div className="container -full">
           <div className="box">
             <h1>{props.title}</h1>
@@ -13,12 +17,14 @@ export default function Headpage(props) {
           </div>
         </div>
       </section>
-      <section className="head-page-under">
+      {/*
+      <section data-scroll-section className="head-page-under">
         <span>Last Updated on Mar 21, 2021</span>
         <Link href="/">
           <a className="scroll-down">Scroll down</a>
         </Link>
       </section>
+      */}
     </>
   );
 }
