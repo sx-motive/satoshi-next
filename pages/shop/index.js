@@ -1,5 +1,9 @@
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import Headpage from "../../components/headpage";
+
+import { shop } from "../api/data";
 
 export default function Shop() {
   return (
@@ -11,6 +15,24 @@ export default function Shop() {
       </Head>
 
       <Headpage title="Shop" description=" " />
+      <section data-scroll-section>
+        <div className="container -default">
+          <div className="shop-wrap">
+            {shop.map((item, index) => (
+              <div key={index} className="product-wrap">
+                <Link href={`/shop/${item.slug}`}>
+                  <a className="img-wrap">
+                    <img src={item.image} alt={item.name} />
+                  </a>
+                </Link>
+                <h4 className="title">{item.name}</h4>
+                <span className="price">${item.price}</span>
+                <button className="add">Add to card</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

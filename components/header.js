@@ -17,6 +17,14 @@ export default function Header() {
             days 11 hours 41 min.
           </marquee>
         </span>
+        <div className="btns-wrap">
+          <Link href="/cart">
+            <a>Cart</a>
+          </Link>
+          <Link href="/login">
+            <a>Login</a>
+          </Link>
+        </div>
       </div>
       <header data-scroll-section data-scroll-section-inview>
         <div className="wrap-logo">

@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 
 import "../styles/style.css";
 import "../styles/sections.css";
+import "../styles/shop.css";
 
 function MyApp({ Component, pageProps }) {
   // locomotive scroll

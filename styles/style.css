@@ -255,7 +255,6 @@ ul {
 /* inputs */
 
 input {
-  -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
   color: -internal-light-dark(black, white);
   letter-spacing: normal;
@@ -284,10 +283,19 @@ input {
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 2vw;
 }
 .header-notification span {
   width: 80%;
+}
+
+.header-notification .btns-wrap {
+  display: flex;
+}
+
+.header-notification .btns-wrap a {
+  margin-left: 20px;
 }
 
 header {
@@ -398,4 +406,9 @@ header .wrap-btns {
   align-items: center;
   height: 100%;
   justify-content: center;
+}
+
+footer {
+  padding: 100px 0 50px 0;
+  text-align: center;
 }

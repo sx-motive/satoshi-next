@@ -20,7 +20,7 @@ export default function SectionDescription(props) {
     >
       <div className="main-container" id="stick">
         {props.data.map((item, index) => (
-          <div className="item-wrap">
+          <div key={index} className="item-wrap">
             <div className="col-left">
               <div className="img-wrap">
                 <img src={item.img} alt={item.title} />
