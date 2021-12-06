@@ -1,8 +1,10 @@
+// dependencies
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const MotiveLink = ({ href, children }) => {
+// nucleus
+const ActiveLink = ({ href, children }) => {
   const router = useRouter();
 
   let className = children.props.className || "";
@@ -13,4 +15,4 @@ const MotiveLink = ({ href, children }) => {
   return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
 };
 
-export default MotiveLink;
+export default ActiveLink;
