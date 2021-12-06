@@ -1,6 +1,10 @@
+// dependencies
 import Head from "next/head";
-import Headpage from "../components/headpage";
 
+// components
+import Headpage from "../src/components/headpage";
+
+// nucleus
 export default function Constacts() {
   return (
     <>

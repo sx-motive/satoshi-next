@@ -1,11 +1,15 @@
+// dependencies
 import { useEffect } from "react";
 
-import Layout from "../components/layout";
+// components
+import Layout from "../src/components/layout";
 
-import "../styles/style.css";
-import "../styles/sections.css";
-import "../styles/shop.css";
+// styles
+import "../src/styles/style.css";
+import "../src/styles/sections.css";
+import "../src/styles/shop.css";
 
+// nucleus
 function MyApp({ Component, pageProps }) {
   // locomotive scroll
   useEffect(() => {
@@ -14,10 +18,6 @@ function MyApp({ Component, pageProps }) {
       scroll = new locomotiveModule.default({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
-        smoothMobile: true,
-        touchMultiplier: 0.3,
-        resetNativeScroll: true,
-        lerp: 0.085,
       });
     });
 

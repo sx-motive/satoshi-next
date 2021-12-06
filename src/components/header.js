@@ -1,8 +1,13 @@
+// dependencies
 import Link from "next/link";
-import MotiveLink from "./activelink";
 
-import { nav } from "../pages/api/data";
+// components
+import ActiveLink from "./activelink";
 
+// database
+import { nav } from "../utils/data";
+
+// nucleus
 export default function Header() {
   return (
     <>
@@ -36,11 +41,11 @@ export default function Header() {
           <ul>
             {nav.map((item, index) => (
               <li key={index}>
-                <MotiveLink href={item.link}>
+                <ActiveLink href={item.link}>
                   <a>
                     <span>{item.title}</span>
                   </a>
-                </MotiveLink>
+                </ActiveLink>
               </li>
             ))}
           </ul>

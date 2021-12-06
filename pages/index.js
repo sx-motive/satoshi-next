@@ -1,6 +1,10 @@
+// dependencies
 import Head from "next/head";
-import Headpage from "../components/headpage";
 
+// components
+import Headpage from "../src/components/headpage";
+
+// nucleus
 export default function Home() {
   return (
     <>
@@ -10,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Headpage title="Constacts" description=" " />
+      <Headpage title="Home" description=" " />
     </>
   );
 }

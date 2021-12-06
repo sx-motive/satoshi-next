@@ -1,5 +1,7 @@
+// dependencies
 import Link from "next/link";
 
+// nucleus
 export default function Headpage(props) {
   return (
     <>

@@ -1,10 +1,14 @@
+// dependencies
 import Head from "next/head";
-import Image from "next/dist/client/image";
-import MotiveImage from "../components/sections/image";
-import Headpage from "../components/headpage";
+import Image from "next/image";
 
-import { services } from "./api/data";
+// components
+import Headpage from "../src/components/headpage";
 
+// database
+import { services } from "../src/utils/data";
+
+// nucleus
 export default function Services() {
   return (
     <>
@@ -24,7 +28,7 @@ export default function Services() {
         data-scroll-section-inview
         className="image -full"
       >
-        <MotiveImage src="/media/03.jpeg" />
+        <img src="/media/03.jpeg" alt="img" />
       </section>
 
       <section

@@ -1,16 +1,10 @@
-import React from "react";
-import Image from "next/image";
+// dependencies
 import Link from "next/link";
 
-{
-  /*
+// API: sectionDescription
+// PROPS: img: string, subtitle: string, title: string, p: string
 
-API: sectionDescription
-props: img: string, subtitle: string, title: string, p: string
-
-*/
-}
-
+// nucleus
 export default function SectionDescription(props) {
   return (
     <section

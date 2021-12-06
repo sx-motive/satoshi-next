@@ -1,39 +1,14 @@
+// dependencies
 import Head from "next/head";
-import Headpage from "../components/headpage";
-import MotiveImage from "../components/sections/image";
-import SectionDescription from "../components/sections/section-description";
 
-const q = [
-  {
-    title:
-      "Whiteboard Wins Webflow Partner Award for Excellence in No-Code Web Design",
-    p: "Whiteboard today announced it has won the Webflow Partner Award for Excellent Aesthetics. This year marks the inaugural year of the awards, which will be bestowed annually to the leading innovators who build the best dynamic no-code web experiences on Webflow’s platform. “Every new chapter at Whiteboard always begins with a new website. All of them have been special, but I’m especially proud of this one,” said Whiteboard’s co-founder and CVO Eric Brown. “In a world saturated by templates and tracking pixels—our team aimed to create something you’d sit with for a few minutes. Otherwise (like so many parts of our lives) the small, but wonderful details go unnoticed. For me, these details serve as an invitation to keep exploring, trying, and pioneering",
-    img: "/media/faqs/01.svg",
-    path: "#section1",
-  },
-  {
-    title:
-      "How No-Code Empowers our Agency to Advance the Mission of Our Clients",
-    p: "Whiteboard today announced it has won the Webflow Partner Award for Excellent Aesthetics. This year marks the inaugural year of the awards, which will be bestowed annually to the leading innovators who build the best dynamic no-code web experiences on Webflow’s platform. “Every new chapter at Whiteboard always begins with a new website. All of them have been special, but I’m especially proud of this one,” said Whiteboard’s co-founder and CVO Eric Brown. “In a world saturated by templates and tracking pixels—our team aimed to create something you’d sit with for a few minutes. Otherwise (like so many parts of our lives) the small, but wonderful details go unnoticed. For me, these details serve as an invitation to keep exploring, trying, and pioneering",
-    img: "/media/faqs/02.svg",
-    path: "#section2",
-  },
-  {
-    title:
-      "How No-Code Empowers our Agency to Advance the Mission of Our Clients",
-    p: "Whiteboard today announced it has won the Webflow Partner Award for Excellent Aesthetics. This year marks the inaugural year of the awards, which will be bestowed annually to the leading innovators who build the best dynamic no-code web experiences on Webflow’s platform. “Every new chapter at Whiteboard always begins with a new website. All of them have been special, but I’m especially proud of this one,” said Whiteboard’s co-founder and CVO Eric Brown. “In a world saturated by templates and tracking pixels—our team aimed to create something you’d sit with for a few minutes. Otherwise (like so many parts of our lives) the small, but wonderful details go unnoticed. For me, these details serve as an invitation to keep exploring, trying, and pioneering",
-    img: "/media/faqs/03.svg",
-    path: "#section2",
-  },
-  {
-    title:
-      "How No-Code Empowers our Agency to Advance the Mission of Our Clients",
-    p: "Whiteboard today announced it has won the Webflow Partner Award for Excellent Aesthetics. This year marks the inaugural year of the awards, which will be bestowed annually to the leading innovators who build the best dynamic no-code web experiences on Webflow’s platform. “Every new chapter at Whiteboard always begins with a new website. All of them have been special, but I’m especially proud of this one,” said Whiteboard’s co-founder and CVO Eric Brown. “In a world saturated by templates and tracking pixels—our team aimed to create something you’d sit with for a few minutes. Otherwise (like so many parts of our lives) the small, but wonderful details go unnoticed. For me, these details serve as an invitation to keep exploring, trying, and pioneering",
-    img: "/media/faqs/04.svg",
-    path: "#section2",
-  },
-];
+// components
+import SectionDescription from "../src/components/sections/section-description";
+import Headpage from "../src/components/headpage";
 
+// database
+import { q } from "../src/utils/data";
+
+// nucleus
 export default function Faqs() {
   return (
     <>
@@ -52,7 +27,7 @@ export default function Faqs() {
         data-scroll-section-inview
         className="image -full"
       >
-        <MotiveImage src="/media/03.jpeg" />
+        <img src="/media/03.jpeg" alt="img" />
       </section>
       <SectionDescription data={q} subtitle="Subtitle" />
     </>

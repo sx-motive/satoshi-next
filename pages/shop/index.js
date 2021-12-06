@@ -1,11 +1,17 @@
+// dependencies
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-import Headpage from "../../components/headpage";
 
-import { shop } from "../api/data";
+// components
+import Headpage from "../../src/components/headpage";
 
-export default function Shop() {
+// database
+import Product from "../../src/models/product";
+import db from "../../src/utils/db";
+
+// nucleus
+export default function Shop(props) {
+  const { productsData } = props;
   return (
     <>
       <Head>
@@ -15,11 +21,11 @@ export default function Shop() {
       </Head>
 
       <Headpage title="Shop" description=" " />
-      <section data-scroll-section>
+      <section data-scroll-section className="shop-page">
         <div className="container -default">
-          <div className="shop-wrap">
-            {shop.map((item, index) => (
-              <div key={index} className="product-wrap">
+          <div className="shop-list-wrap">
+            {productsData.map((item, index) => (
+              <div key={index} className="product-wrap-item">
                 <Link href={`/shop/${item.slug}`}>
                   <a className="img-wrap">
                     <img src={item.image} alt={item.name} />
@@ -35,4 +41,15 @@ export default function Shop() {
       </section>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find({}).lean();
+  await db.disconnect();
+  return {
+    props: {
+      productsData: products.map(db.convertDocToObj),
+    },
+  };
 }

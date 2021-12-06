@@ -1,29 +1,37 @@
-import React from "react";
+// dependencies
+import React, { useContext, useEffect, useState } from "react";
 
-import { shop } from "../api/data";
+// database
+import Product from "../../src/models/product";
+import db from "../../src/utils/db";
 
-export default function Product(productData) {
-  const product = productData.productData;
+// nucleus
+export default function SingleProduct(props) {
+  const { productData } = props;
   return (
-    <section data-scroll-section>
+    <section data-scroll-section className="single-product">
       <div className="container -default">
-        <div className="product-item-wrap">
+        <div className="single-product-wrap">
           <div className="col-left">
-            <img src={product.image} alt={product.name} />
+            <img src={productData.image} alt={productData.name} />
+            <img src={productData.image} alt={productData.name} />
+            <img src={productData.image} alt={productData.name} />
+            <img src={productData.image} alt={productData.name} />
           </div>
-          <div className="col-right">
+          <div className="col-right single-product-meta">
             <span>
               Status:{" "}
-              {product.countInStock > 0
+              {productData.countInStock > 0
                 ? "Product in stock"
                 : "Product out of stock"}
             </span>
-            <span>Category: {product.category}</span>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <span>Brand: {product.brand}</span>
-            <span>Rating: {product.rating} of 10</span>
-            <span>Price: {product.price}</span>
+
+            <h3>{productData.name}</h3>
+            <span>Category: {productData.category}</span>
+            <span>Description: {productData.description}</span>
+            <span>Brand: {productData.brand}</span>
+            <span>Rating: {productData.rating} of 10</span>
+            <span>Price: ${productData.price}</span>
             <button className="add">Add to cart</button>
           </div>
         </div>
@@ -32,24 +40,16 @@ export default function Product(productData) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = shop.map((item) => ({
-    params: { slug: item.slug },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps(context) {
+  const { params } = context;
   const { slug } = params;
 
-  let searchTerm = slug;
-  let productData = shop.find((item) => item.slug === searchTerm);
-
+  await db.connect();
+  let productData = await Product.findOne({ slug }, "-reviews").lean();
+  await db.disconnect();
   return {
-    props: { productData },
+    props: {
+      productData: db.convertDocToObj(productData),
+    },
   };
 }
